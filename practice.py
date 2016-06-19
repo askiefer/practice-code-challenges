@@ -27,3 +27,22 @@ def count_list(lst):
         return 0
     return 1 + count_list(lst[1:])
 
+def print_recursively(lst):
+    """Prints a list recursively
+
+    >>> print_recursively([1, 2, 3])
+    1
+    2
+    3
+    
+    >>> print_recursively([])
+    0
+    """
+    if not lst:
+        return 0
+    
+    print lst[0]
+    print_recursively(lst[1:])
+
+
+
