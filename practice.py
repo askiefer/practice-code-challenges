@@ -44,5 +44,44 @@ def print_recursively(lst):
     print lst[0]
     print_recursively(lst[1:])
 
+# def recursive_index(needle, haystack):
+#     """Find the index of an item in a list using recursion.
+
+#     >>> recursive_index("hey", ["hey", "there", "you"])
+#     0
+
+#     >>> recursive_index("cat", ["hey", "there", "you"])
+#     None
+#     """
+    ## FIX ME 
+
+def binary_search(val):
+    """Using binary search, return the num of guesses it will take to guess the val given
+
+    >>> binary_search(50)
+    1
+
+    >>> binary_search(25)
+    2
+    """
+    assert 0 < val < 101
+    
+    num_guesses = 0
+    min_guess = 0
+    max_guess = 101
+    guess = None
+
+
+    while guess != val:
+        num_guesses += 1
+        guess = (max_guess - min_guess) / 2 + min_guess
+
+        if guess > val:
+            max_guess = guess
+        elif guess < val:
+            min_guess = guess
+
+    return num_guesses
+
 
 
