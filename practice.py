@@ -83,5 +83,20 @@ def binary_search(val):
 
     return num_guesses
 
+def missing_num(lst, val):
+    """Finds the missing number in a list
+
+    >>> missing_num([2, 1, 4, 3, 6, 5, 7, 10, 9], 10)
+    8
+
+    >>> missing_num([0, 1, 3], 3)
+    2
+    """
+
+    sorted_lst = lst.sort()
+    min_val = lst[0]
+    for i in range(min_val, (val+1)):
+        if i not in lst:
+            return i
 
 
