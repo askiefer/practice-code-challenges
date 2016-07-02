@@ -433,32 +433,41 @@ def sorted_lists(lst1, lst2):
 #         if string_lst[i] != splitter_lst[j]:
 #             new_list.append(string_lst[i])
 
-# def longest_palindrome(str):
-#     """Returns the longest palindrome in a string
-#     >>> longest_palindrome("abcdefghba")
-#     1
-#     >>> longest_palindrome("baablkj12345432133d")
-#     9
-#     """
-#     longest_pal = 0
-#     # for a char, iterate through until we find that char again
-#     # if not found, continue
-#     # if found, pass that substring into _is_pal
-#     # if true, compare the length of that substring with longest pal
-#     i = 0
-#     j = 0
+def longest_palindrome(s):
+    """Return the length of the longest palindrome in a string
+    >>> longest_palindrome("abcdefghba")
+    1
+    >>> longest_palindrome("baablkj12345432133d")
+    9
+    """
+    # return 1 if the string has only unique elements
+    if len(set(s)) == len(s):
+        longest_pal = 1
+        return longest_pal
 
-#     while i < range(len(str)) and j < range(len(str)):
-#         if str[i] != str[j]:
-#             i = i+1
-#             j = j+1
-#             continue
-#         else:
-#             # returns a True / False
-#             answer = _is_pal(str[i:j])
-#             if answer == True and answer > len(longest_pal):
-#                 longest_pal = str[i:j]
-#     return longest_pal
+    # for any char i in s, iterate through s until that char is found again
+    # slice that into a substring and check if it's a palindrome
+    # if a palindrome is found, add to the palindrome dict, returning the max value 
+
+    i = 0
+    j = 1
+    pal_lengths = {}
+
+    # O(n^2) runtime == terrible I know
+    for i in range(len(s)):
+        for j in range(len(s)):
+            
+            if s[i] == s[j]:
+                sub = s[i:j+1]
+                
+                if _is_pal(sub) == True:
+                    pal_lengths[sub] = len(sub)
+
+    lst_val = [v for v in pal_lengths.values() if v == max(pal_lengths.values())]
+    
+    val = lst_val.pop()
+    
+    return val
     
 def _is_pal(s):
     is_pal = True
@@ -467,4 +476,44 @@ def _is_pal(s):
             is_pal = True
         else:
             is_pal = False
+
+    return is_pal
+
+def exponent(a, b):
+    """Raises a to the power of b
+    >>> exponent(3, 2)
+    9
+    """
+    solution = a
+
+    if b == 0:
+        return 1 
+    # for positive ints 
+    if b > 1:
+        while b > 1:
+            solution = solution * a
+            b-=1
+        return solution
+
+    if b <= -1:
+        while b < -1:
+            solution = solution * a
+            b+=1
+        return (float(1)/solution)
+
+    
+    return solution
+
+def fast_exp(x, n):
+    if n == 0:
+        return 1
+    elif n % 2 == 0:
+        return fast_exp(x*x, n/2)
+    else:
+        return x * fast_exp(x, n-1) 
+
+
+
+
+
 
