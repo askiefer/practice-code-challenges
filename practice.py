@@ -471,13 +471,18 @@ def longest_palindrome(s):
     
 def _is_pal(s):
     is_pal = True
-    for i in range(len(s)/2):
+    for i in range(len(s)):
         if s[i] == s[-i-1]:
+            print s[i], s[-i-1]
             is_pal = True
         else:
+            print s[i], s[-i-1]
             is_pal = False
+        return is_pal
 
-    return is_pal
+def is_palindrome(s):
+    """More pythonic solution to is_pal"""
+    return s == s[::-1]
 
 def exponent(a, b):
     """Raises a to the power of b
