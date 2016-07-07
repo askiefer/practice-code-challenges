@@ -32,14 +32,19 @@ def dec_to_bin(num):
 
 def dec_to_bin_rec(num):
 	"""Converts decimal to binary recursively
-	>>> dec_to_bin_rec(42)
-	'0101010'
+	>>> dec_to_bin_rec(85)
+	'1010101'
 	"""
 	if num < 0:
 		print "Number must be greater than 0"
 		return 
 	elif num == 0:
-		return '0'
+		# return an empty string, rather than '0', or else an extra
+		# 0 is printed before the number
+		return ''
 	else:
+		# if num == 1:
+		# 	return str(num % 2)
+		# else:
 		return dec_to_bin_rec(num // 2) + str(num % 2)
 

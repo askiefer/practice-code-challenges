@@ -518,16 +518,44 @@ def fast_exp(x, n):
         return x * fast_exp(x, n-1) 
 
 def intersect(self, nums1, nums2):
-        """
+    """
         :type nums1: List[int]
         :type nums2: List[int]
         :rtype: List[int]
-        """
+    """
     overlaps = []
     for i in range(len(nums1)):
         if nums1[i] in nums2:
             overlaps.append(nums1[i])
         return overlaps
+
+def reverse_vowels(self, s):
+    """Reverses vowels in a string
+    >>> reverse_vowels('hello')
+    'holle'
+    >>> reverse_vowels('peony')
+    'poeny'
+    """
+    # use two pointers 
+    # iterate through the string until finds one vowel 
+    vowels = ('a', 'e', 'i', 'o', 'u')
+    list_s = list(s)
+    i = 0
+    j = len(list_s)-1
+    while i < j and list_s[i] not in vowels:
+        i += 1
+    while i < j and list_s[j] not in vowels:
+        j -= 1
+    s[i], s[j] = s[j], s[i]
+
+
+
+
+
+
+
+
+
 
 
 
