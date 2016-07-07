@@ -43,8 +43,5 @@ def dec_to_bin_rec(num):
 		# 0 is printed before the number
 		return ''
 	else:
-		# if num == 1:
-		# 	return str(num % 2)
-		# else:
 		return dec_to_bin_rec(num // 2) + str(num % 2)
 
