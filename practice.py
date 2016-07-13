@@ -548,9 +548,9 @@ def reverse_vowels(self, s):
         j -= 1
     s[i], s[j] = s[j], s[i]
 
-
-
-
+def str_subset(arr, str):
+    """Finds the smallest substring of str containing all characters of arr"""
+    #have two pointers 
 
 
 
