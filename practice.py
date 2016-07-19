@@ -552,7 +552,40 @@ def str_subset(arr, str):
     """Finds the smallest substring of str containing all characters of arr"""
     #have two pointers 
 
+def reverse_str(string):
+    """Reverses a string"""
+    return string[::-1]
 
+def fibonacci_num(num):
+    """Computes the ith fibonnaci number"""
+    # a fib sequence is one that adds up the previous two numbers until it reaches ith num
+    # eg 7 -> 13 (0, 1, 1, 2, 3, 5, 8, 13)
+    a, b = 1, 1
+    for i in range(num-1):
+        a, b = a, b+a
+    return a 
+
+def fibonacci_num_rec(num):
+    """Computes the fibonacci number recursively"""
+    if num <= 0:
+        print "Num must be greater than zero"
+    if num == 1 or num == 2:
+        return 1
+    return fibonacci_num_rec(n-1)
+
+def mult_tbl():
+    """Given a num n, print a multiplication table up to that num"""
+    n = int(input('Enter a number: '))
+    a = []
+    for row in range(1, n+1):
+        for col in range(1, n+1):
+            mul = row*col
+            a.append(mul)
+        print a
+        for k in range(1, n+1):
+            a.pop()
+
+mult_tbl()
 
 
 
