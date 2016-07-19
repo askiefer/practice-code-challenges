@@ -587,6 +587,19 @@ def mult_tbl():
 
 mult_tbl()
 
+def sum_ints():
+    with open('nums.txt') as data:
+        total = 0
+        blank_rows = 0
+        for row in data:
+            try:
+                num = float(row)
+                total += num
+            except ValueError:
+                blank_rows += 1
+    print 'Sum equals: {}, blank rows: {}'.format(total, blank_rows)
+
+sum_ints()
 
 
 
