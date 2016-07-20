@@ -601,6 +601,33 @@ def sum_ints():
 
 sum_ints()
 
+def print_odd():
+    n = int(input('Enter a number '))
+    for i in range(1, n+1):
+        if i % 2 != 0:
+            print i 
+
+print_odd()
+
+def add_to_zero(lst):
+    """O(n2) solution for adding two nums to zero"""
+    i = 0
+    j = 0
+    for i in lst:
+        for j in lst:
+            if i + j == 0:
+                return True 
+    return False
+
+def add_to_zero(lst):
+    """Optimal solution for adding two nums to zero"""
+    nums = set(lst)
+    for n in nums:
+        if -n in nums:
+            return True
+    return False
+
+
 
 
 
