@@ -357,8 +357,8 @@ def reverse_ll_in_place(head):
     previous = head
     current = head.next 
     while current.next != None:
-        current = current.next
         previous = current
+        current = current.next
     current = head 
     current.next = previous
     while previous.next != None:
@@ -627,7 +627,81 @@ def add_to_zero(lst):
             return True
     return False
 
+def hex_to_dec(str_num):
+    """Converts string num from hex to bin"""
+    CONVERT = {
+        '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
+        '8': 8, '9': 9, 'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15
+    }
+    # FIX ME 
 
+def pal_anagram(string):
+    """Boolean for whether a word is an anagram of a palindrome"""
+    letter_count = {}
+
+    for char in string:
+        count = letter_count.get(char, 0)
+        letter_count[char] = count + 1
+    odd = False
+    # iterate over the values
+    # if a value is 1, set is_pal to True
+    for v in letter_count.values():
+        if count % 2 != 0:
+            if odd:
+                return False
+            odd = True
+    return True
+
+def multiply(a, b):
+    """Creates a multiply function without using *"""
+    if a == 0:
+        return
+    return b + multiply(a-1)
+
+def exponent(a, b):
+    """Creates an exponent function without using **"""
+    if a == 0:
+        return 
+    return b + exponent(a-1)
+
+def depth_first_search(self, data):
+    """Implements a depth first search of a tree"""
+    to_visit = [self]
+
+    while to_visit:
+        node = to_visit.pop()
+        if node.data == data:
+            return node
+        to_visit.extend(node.children)
+
+def breadth_first_search(self, data):
+    """Implements a breadth first search of a tree"""
+    to_visit = [self]
+    while to_visit:
+        node = to_visit.pop(0)
+        if node.data == data:
+            return node
+        to_visit.extend(node.children)
+
+def reverse_ll(head):
+    """Reverses a linked list by creating a new linked list"""
+    new_head = None
+    n = head
+    while n:
+        new_head = Node(n.data, new_head)
+        n = n.next
+    return new_head
+
+def reverse_in_place(head):
+    """Reverses a linked list in place"""
+    prev = None
+    current = head
+    while current:
+        temp = current.next
+        current.next = prev
+        prev = current
+        current = temp 
+    return prev 
 
 
 
