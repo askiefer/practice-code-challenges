@@ -295,6 +295,29 @@ class Node(object):
                 return node
         return None
 
+############## B-Tree methods ############
+
+def BinaryTree(r):
+    return [r, [], []]
+
+def insertLeft(root, newBranch):
+    t = root.pop(1)
+    if len(t) > 1:
+        root.insert(1, [newBranch, t, []])
+    else:
+        root.insert(1, [newBranch, [], []])
+    return root
+    
+############## Map #################
+class HashTable:
+    def __init__(self, size):
+        self.size = size
+        # holds the key items 
+        self.slots = [None] * self.size
+        # holds the data values 
+        self.data = [None] * self.size
+
+
 ############## Graphs ###############
 
 class Graph(object):
