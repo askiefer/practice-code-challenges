@@ -39,10 +39,14 @@ def create_char_dict(str_n):
 	return chars
 
 if __name__ == "__main__":
-	print(is_anagram_one('dog', 'G od'))
-	print(is_anagram_one('clint eastwood', 'old west action'))
-	print(is_anagram_one('aa', 'bb'))
+	# print(is_anagram_one('dog', 'G od'))
+	# print(is_anagram_one('clint eastwood', 'old west action'))
+	# print(is_anagram_one('aa', 'bb'))
 
-	print(is_anagram_two('dog', 'G od'))
-	print(is_anagram_two('clint eastwood', 'old west action'))
-	print(is_anagram_two('aa', 'bb'))
+	# print(is_anagram_two('dog', 'G od'))
+	# print(is_anagram_two('clint eastwood', 'old west action'))
+	# print(is_anagram_two('aa', 'bb'))
+
+	print(logical_xor('dog', 'G od'))
+	print(logical_xor('clint eastwood', 'old west action'))
+	print(logical_xor('aa', 'bb'))
